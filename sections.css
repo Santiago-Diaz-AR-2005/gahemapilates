@@ -1,0 +1,493 @@
+/* sections.css - styles for new landing page sections */
+
+:root {
+    --accent: #2D8B8B; /* keep same accent */
+    --bg: #FAF8F5;
+    --text: #111111;
+    --muted: #666666;
+}
+
+.section {
+    padding: 4rem 2rem;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.section:nth-of-type(even) {
+    background-color: #f5f9fa; /* subtle alternate */
+}
+
+.section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.section h2 {
+    font-family: 'Clash Display', sans-serif;
+    font-size: clamp(2rem,4vw,2.8rem);
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+/* ---------- Nuestra Filosofía ---------- */
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.icon-item {
+    width: 120px;
+    text-align: center;
+    color: var(--muted);
+    transition: transform 0.3s;
+}
+.icon-item img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+}
+.icon-item:hover {
+    transform: translateY(-5px);
+    color: var(--accent);
+}
+
+/* ---------- Nuestro Estudio (gallery) ---------- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+.gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-strong);
+}
+
+/* ---------- Servicios (cards) ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.card {
+    background: var(--bg);
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+}
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+}
+.card p {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+/* ---------- Retiros Pilateros (carrusel) ---------- */
+.retreat-carousel {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-track {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+    height: clamp(280px, 42vw, 460px);
+    aspect-ratio: 16 / 10;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.carousel-slide .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.68));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(1rem, 2vw, 2rem);
+}
+
+.carousel-slide .overlay h3 {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.15;
+}
+
+.carousel-slide .overlay p {
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.4;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--text);
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.04);
+    background: #fff;
+}
+
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: none;
+    background: #c7d7d7;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.carousel-dot.active {
+    background: var(--accent);
+    transform: scale(1.15);
+}
+
+.retreat-info-card {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: var(--shadow-soft);
+    color: var(--text);
+}
+
+.retreat-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.retreat-info-card h3,
+.retreat-info-card h4 {
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+
+.retreat-info-card h3 {
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+.retreat-info-card h4 {
+    font-size: 1.02rem;
+    margin-top: 1rem;
+}
+
+.retreat-info-card p,
+.retreat-info-card li {
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+.retreat-info-card ul {
+    padding-left: 1.1rem;
+    margin: 0.5rem 0 0;
+}
+
+.retreat-closing {
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 1rem;
+}
+
+.retreat-signature {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 1rem;
+}
+
+/* ---------- Formación ---------- */
+.workshop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+.workshop img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-soft);
+}
+.workshop .info {
+    text-align: left;
+}
+
+/* ---------- Contacto (form) ---------- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    background: var(--bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+}
+
+.contact-info-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.contact-info-card h3 {
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+}
+
+.contact-info-card p {
+    color: var(--text);
+    margin-bottom: 0.35rem;
+}
+
+.map-card {
+    margin-top: 1rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+}
+
+.map-card iframe {
+    display: block;
+    width: 100%;
+    min-height: 320px;
+    border: 0;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--muted);
+    border-radius: 0.4rem;
+    font-family: inherit;
+    background: #fff;
+    transition: border-color 0.3s;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+.contact-form button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+.contact-form button:hover {
+    transform: translateY(-2px);
+    background: #2b7d7d;
+}
+
+@media (max-width: 768px) {
+    .section .container {
+        grid-template-columns: 1fr;
+    }
+    .workshop {
+        grid-template-columns: 1fr;
+    }
+    .carousel-track {
+        height: clamp(240px, 54vw, 360px);
+        aspect-ratio: 4 / 5;
+    }
+    .carousel-slide img {
+        object-position: center;
+    }
+}
+
+/* ----------- Responsive for new sections ----------- */
+@media (max-width: 992px) {
+  /* Icon grid stacks vertically */
+  .icon-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon-item {
+    width: 100%;
+    max-width: 200px;
+  }
+  /* Gallery shows one column */
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  /* Cards become single column */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  /* Retreat overlay text scales */
+  .retreat .overlay h3 {
+    font-size: 1.5rem;
+  }
+  .retreat .overlay p {
+    font-size: 1rem;
+  }
+  /* Workshop layout stacks */
+  .workshop {
+    grid-template-columns: 1fr;
+  }
+  /* Contact section stacks on smaller screens */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-form {
+    padding: 1.5rem;
+  }
+  .map-card iframe {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+  .section h2 {
+    font-size: 1.8rem;
+  }
+  .carousel-track {
+    height: clamp(220px, 58vw, 320px);
+    aspect-ratio: 3 / 4;
+  }
+  .carousel-slide .overlay {
+    padding: 0.9rem;
+  }
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+.section-selector {
+    margin: 1rem auto;
+    max-width: 300px;
+    text-align: center;
+}
+.section-selector select {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--muted);
+    border-radius: 0.4rem;
+    background: #fff;
+    font-family: inherit;
+    color: var(--text);
+    cursor: pointer;
+}
+.section-list {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    list-style: none;
+    padding: 0;
+}
+
+.section-list a {
+    color: var(--accent);
+    font-family: 'Clash Display', sans-serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+.section-list a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 40px var(--accent);
+}

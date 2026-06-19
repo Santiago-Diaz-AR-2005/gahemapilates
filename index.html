@@ -75,7 +75,7 @@
             gap: 2.5rem;
         }
 
-        .nav-links a {
+        .nav-links a:not(.nav-cta) {
             font-family: 'Clash Display', sans-serif;
             font-size: 0.95rem;
             font-weight: 500;
@@ -88,7 +88,7 @@
         }
 
         /* Animated underline */
-        .nav-links a::after {
+        .nav-links a:not(.nav-cta)::after {
             content: '';
             position: absolute;
             left: 0;
@@ -100,16 +100,19 @@
             transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .nav-links a:hover {
+        .nav-links a:not(.nav-cta)::after {
             color: var(--accent);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:not(.nav-cta):hover::after {
             width: 100%;
         }
 
         /* Nav CTA */
         .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             font-family: 'Clash Display', sans-serif;
             font-size: 0.9rem;
             font-weight: 600;
@@ -119,6 +122,7 @@
             border-radius: 100px;
             text-decoration: none;
             letter-spacing: 0.04em;
+            line-height: 1;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 4px 14px rgba(45, 139, 139, 0.25);
         }
@@ -367,6 +371,7 @@
             <a href="#filosofia">Filosofía</a>
             <a href="#estudio">Estudio</a>
             <a href="#servicios">Servicios</a>
+            <a href="#sports">Gahema Sports</a>
             <a href="#retiros">Retiros</a>
             <a href="#formacion">Formación</a>
             <a href="#app-crossfy">App</a>
@@ -469,6 +474,125 @@
                 <div class="card">
                     <h3>Clases Individuales</h3>
                     <p>Sesiones 1‑on‑1 adaptadas a tus objetivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAHEMA SPORTS -->
+    <section id="sports" class="section sports-section">
+        <div class="container">
+            <div class="sports-hero-grid">
+                <div class="sports-intro">
+                    <span class="sports-badge">Próximamente</span>
+                    <h2>GAHEMA SPORTS<br><span style="color: var(--accent); font-style: italic;">Alto Rendimiento</span></h2>
+                    <p class="hero-p" style="margin-bottom: 1.5rem;">
+                        En Gahema Pilates Therapy damos un paso adelante en nuestra evolución profesional, incorporando técnicas avanzadas para acompañar a quienes buscan maximizar su rendimiento físico y deportivo.
+                    </p>
+                    <p class="hero-p" style="margin-bottom: 2rem;">
+                        Un espacio diseñado con precisión científica para atletas de alto rendimiento, deportistas amateurs y toda persona comprometida con su desarrollo físico integral.
+                    </p>
+                    <a href="https://wa.me/5493816210106?text=Hola%21%20Quiero%20saber%20m%C3%A1s%20sobre%20Gahema%20Sports" target="_blank" rel="noopener" class="cta-main">Conocer más sobre el programa</a>
+                </div>
+                <div class="sports-presentation-img">
+                    <img src="https://i.postimg.cc/Qt2ypV8X/Whats-App-Image-2026-06-19-at-1-09-03-PM-removebg-preview.png" alt="GAHEMA SPORTS Presentación">
+                </div>
+            </div>
+
+            <div class="sports-objectives-area">
+                <h3 class="sports-subheading">Áreas de enfoque y optimización:</h3>
+                <div class="sports-objectives-grid">
+                    <div class="objective-item">
+                        <span class="obj-check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Rendimiento físico y deportivo</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="obj-check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Fuerza funcional y estabilidad del core</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="obj-check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Rango de movilidad articular dinámico</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="obj-check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Prevención activa de lesiones de esfuerzo</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="obj-check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Recuperación muscular y miofascial asistida</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="obj-check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Corrección postural y biomecánica</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="obj-check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Retorno seguro post-rehabilitación deportiva</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sports-quote-slider-grid">
+                <div class="sports-quote-box">
+                    <p class="sports-quote-text">
+                        "Entrenar más no siempre significa entrenar mejor. La verdadera diferencia radica en cómo preparas, equilibras y recuperas tu cuerpo."
+                    </p>
+                    <span class="sports-quote-author">Metodología GAHEMA Sports</span>
+                </div>
+                <div class="sports-slider-container">
+                    <div class="sports-carousel" aria-label="Carrusel de deportistas de élite que entrenan Pilates">
+                        <button class="sports-carousel-btn prev" type="button" aria-label="Imagen anterior">&#10094;</button>
+                        <div class="sports-carousel-track">
+                            <div class="sports-carousel-slide active">
+                                <div class="sports-img-container">
+                                    <img src="https://i.postimg.cc/02869nv6/11-Cristiano-Ronaldo-Pilates.webp" alt="Cristiano Ronaldo entrenando Pilates">
+                                    <div class="sports-slide-overlay">
+                                        <h4>Cristiano Ronaldo</h4>
+                                        <p>Flexibilidad, prevención de lesiones y longevidad deportiva.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sports-carousel-slide">
+                                <div class="sports-img-container">
+                                    <img src="https://i.postimg.cc/QxxM2Mgk/14-Lebron-James-y-Kobe-Bryant-Pilates-585x363.webp" alt="Lebron James y Kobe Bryant entrenando Pilates">
+                                    <div class="sports-slide-overlay">
+                                        <h4>LeBron James & Kobe Bryant</h4>
+                                        <p>Fuerza funcional, estabilidad del core y agilidad en cancha.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sports-carousel-slide">
+                                <div class="sports-img-container">
+                                    <img src="https://i.postimg.cc/9z3JqkBC/03-DAVID-BECKHAM-Pilates.png" alt="David Beckham entrenando Pilates">
+                                    <div class="sports-slide-overlay">
+                                        <h4>David Beckham</h4>
+                                        <p>Control postural, equilibrio corporal y movilidad simétrica.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="sports-carousel-btn next" type="button" aria-label="Imagen siguiente">&#10095;</button>
+                        <div class="sports-carousel-dots" aria-label="Seleccionar imagen del carrusel">
+                            <button class="sports-carousel-dot active" type="button" aria-label="Ir a la imagen 1"></button>
+                            <button class="sports-carousel-dot" type="button" aria-label="Ir a la imagen 2"></button>
+                            <button class="sports-carousel-dot" type="button" aria-label="Ir a la imagen 3"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -712,6 +836,49 @@
             });
 
             startAutoRotate();
+        }
+
+        // Carrusel de Gahema Sports
+        const sportsSlides = Array.from(document.querySelectorAll('.sports-carousel-slide'));
+        const sportsDots = Array.from(document.querySelectorAll('.sports-carousel-dot'));
+        const sportsPrevBtn = document.querySelector('.sports-carousel-btn.prev');
+        const sportsNextBtn = document.querySelector('.sports-carousel-btn.next');
+        let sportsCurrentSlide = 0;
+        let sportsAutoRotate;
+
+        function showSportsSlide(index) {
+            sportsCurrentSlide = (index + sportsSlides.length) % sportsSlides.length;
+            sportsSlides.forEach((slide, i) => slide.classList.toggle('active', i === sportsCurrentSlide));
+            sportsDots.forEach((dot, i) => dot.classList.toggle('active', i === sportsCurrentSlide));
+        }
+
+        function nextSportsSlide() {
+            showSportsSlide(sportsCurrentSlide + 1);
+        }
+
+        function startSportsAutoRotate() {
+            clearInterval(sportsAutoRotate);
+            sportsAutoRotate = setInterval(nextSportsSlide, 4000);
+        }
+
+        if (sportsSlides.length && sportsPrevBtn && sportsNextBtn) {
+            sportsPrevBtn.addEventListener('click', () => {
+                showSportsSlide(sportsCurrentSlide - 1);
+                startSportsAutoRotate();
+            });
+            sportsNextBtn.addEventListener('click', () => {
+                nextSportsSlide();
+                startSportsAutoRotate();
+            });
+
+            sportsDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSportsSlide(index);
+                    startSportsAutoRotate();
+                });
+            });
+
+            startSportsAutoRotate();
         }
 
         // Formulario de contacto → WhatsApp
